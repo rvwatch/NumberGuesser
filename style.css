@@ -1,95 +1,36 @@
-/*------------------------------------*\
-    RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-    v2.0b1 | 201101 
-    NOTE:WORK IN PROGRESS
-    USE WITH CAUTION AND TEST WITH ABANDON */
 
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    font:inherit;
-    vertical-align:baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-    display:block;
-}
-body{
-    line-height:1;
-}
-ol,ul{
-    list-style:none;
-}
-blockquote,q{
-    quotes:none;
-}
-blockquote:before,blockquote:after,
-q:before,q:after{
-    content:’’;
-    content:none;
-}
-/* remember to define visible focus styles! 
-:focus{
-    outline:?????;
-} */
-
-/* remember to highlight inserts somehow! */
-ins{
-    text-decoration:none;
-}
-del{
-    text-decoration:line-through;
-}
-
-table{
-    border-collapse:collapse;
-    border-spacing:0;
-}
-
-/*------------------------------------*\
-    $MAIN
-\*------------------------------------*/
 
 body{
     font-family: 'Open Sans', sans-serif;
 }
 
 header{
-    background-color: #404041;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 6em;
+
+    height: 110px;
+
+    background-color: #404041;
 }
 
 
 header h1{
     color:#fff;
-    font-size: 2.5em;
+    font-size: 3.75em;
     font-weight: lighter;
 }
 
 header h1 strong{
     font-weight: bold;
     color: #ed458b;
+}
+
+#game-wrap{
+    margin:auto;
+
+    width:470px;
 }
 
 
@@ -105,40 +46,53 @@ form label{
 form label input{
     display: block;
     margin:inherit;
-    color:#929497;
-    border: 1px solid #929497;
+    
     height: 40px;
     padding-left: 10px;
+    min-width: 460px;
+
     font-size: 1.25em;
-    width:35%;
-    min-width: 200px;
+    color:#929497;
+    border: 1px solid #929497;
 }
 
-form button, #reset-button{
+form button, 
+.reset-button, 
+#setMax{
+    width:215px;
+    height: 47px;
+    margin:25px 13px 0 0;
+
+    cursor: pointer;
     background-color: #929497;
     border: none;
     border-radius: 25px;
     color: #fff;
     font-weight: lighter;
-    font-size: 1.25em;
-    width:180px;
-    cursor: pointer;
-    height: 40px;
-    margin:25px 20px 0 0;
+    font-size: 1.65em;
 }
 
 form button.disabled, 
-#reset-button.disabled, 
+.reset-button.disabled, 
+#setMax.disabled, 
 form button.disabled:hover, 
-#reset-button.disabled:hover{
-    background-color: #d0d2d3;
+.reset-button.disabled:hover{
     cursor: not-allowed;
+    background-color: #d0d2d3;
 }
 
 
-form button:hover, #reset-button:hover{
+form button:hover, 
+.reset-button:hover, 
+#setMax:hover{
     background-color: #EB008B;
 
+}
+
+.reset-button, #setMax {
+    width:470px;
+    height: 40px;
+    font-size: 1.15em;
 }
 
 section{
@@ -148,9 +102,55 @@ section{
 
 
 section strong#last-guess{
-    font-size: 6.25em; 
+    font-size: 5em; 
     color: #ed458b;
     font-weight: lighter;
 }
 
+#result-response,
+.guessedH2{
+    margin-top: 20px;
+    font-size: 1.5em;
+}
 
+/*SLIDER*/
+
+#slidecontainer{
+    text-align: center;
+}
+
+#slidecontainer p{
+    font-size: 1.15em;
+}
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 470px;
+    height: 15px;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-bottom: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #ed458b;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ed458b;
+    cursor: pointer;
+}
